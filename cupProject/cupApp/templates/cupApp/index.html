@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cup App</title>
+</head>
+<body>
+<h1>Autumn</h1>
+
+{% if allCups %}
+<h3>All Entries</h3>
+<!--all cups-->
+<ul>
+    {% for eachEl in allCups %}
+    <li>{{ eachEl.name}}, {{ eachEl.material}}, {{ eachEl.manufactuerDate}}</li>
+    {% endfor %}
+</ul>
+
+<h3>Cups Manufactures after 2012</h3>
+<!--cups made after 2012-->
+<ul>
+    {% for eachEl in newCups %}
+    <li>{{ eachEl.name}} was manufactured in {{eachEl.manufactuerDate}}</li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>No cups listed.</p>
+{% endif %}
+</body>
+</html>
